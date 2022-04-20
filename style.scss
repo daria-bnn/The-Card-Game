@@ -1,0 +1,50 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+html,
+body {
+    font-family: Rubik;
+    font-size: 24px;
+    color: #000;
+    height: 100%;
+    background-color: #004980;
+}
+
