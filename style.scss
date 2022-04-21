@@ -41,10 +41,113 @@ textarea {
 
 html,
 body {
+    height: 100%;
+
     font-family: Rubik;
     font-size: 24px;
+    font-weight: 400;
     color: #000;
-    height: 100%;
+
     background-color: #004980;
+    overflow: hidden;
 }
 
+.center {
+    padding-right: calc(50% - 518px);
+    padding-left: calc(50% - 518px);
+}
+
+.block-game {
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-game__info-block {
+    min-width: 480px;
+
+    border-radius: 12px;
+
+    background-color: #C2F5FF;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 52px;
+    padding-bottom: 68px;
+}
+
+.form__title {
+    width: 220px;
+
+    font-size: 40px;
+    line-height: 1.2;
+    color: #004980;
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+.block-options {
+    position: relative;
+
+    display: flex;
+    gap: 24px;
+
+    margin-bottom: 68px;
+}
+
+.block-options__name {
+    background-color: #fff;
+    border-radius: 12px;
+    border: .5px solid transparent;
+
+    color: #0080C1;
+    font-size: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 97px;
+    height: 98px;
+
+    transition: border .3s;
+
+    &:hover {
+        border: .5px solid #0080C1;
+
+        cursor: pointer;
+    }
+}
+
+.block-options__input {
+    position: absolute;
+    left: -1000px;
+}
+
+.button {
+    background-color: #7AC100;
+
+    border-radius: 12px;
+    border: 1px solid transparent;
+
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.33;
+
+    width: 246px;
+    height: 50px;
+
+    transition: box-shadow .3s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 27px 27px rgba(53, 115, 48, 0.2) inset;
+    }
+}
