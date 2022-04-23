@@ -13,6 +13,16 @@ function blockForm() {
                 cls: ['form__block-options', 'block-options'],
                 content: [
                     {
+                        tag: 'input',
+                        cls: ['block-options__input'],
+                        attrs: {
+                            type: 'radio',
+                            id: 'difficulty-light',
+                            name: 'difficulty',
+                            value: 'light'
+                        }
+                    },
+                    {
                         tag: 'label',
                         content: '1',
                         cls: ['block-options__name'],
@@ -25,9 +35,9 @@ function blockForm() {
                         cls: ['block-options__input'],
                         attrs: {
                             type: 'radio',
-                            id: 'difficulty-light',
+                            id: 'difficulty-medium',
                             name: 'difficulty',
-                            value: 'light'
+                            value: 'medium'
                         }
                     },
                     {
@@ -43,9 +53,9 @@ function blockForm() {
                         cls: ['block-options__input'],
                         attrs: {
                             type: 'radio',
-                            id: 'difficulty-medium',
+                            id: 'difficulty-hard',
                             name: 'difficulty',
-                            value: 'medium'
+                            value: 'hard'
                         }
                     },
                     {
@@ -56,22 +66,17 @@ function blockForm() {
                             for: 'difficulty-hard',
                         }
                     },
-                    {
-                        tag: 'input',
-                        cls: ['block-options__input'],
-                        attrs: {
-                            type: 'radio',
-                            id: 'difficulty-hard',
-                            name: 'difficulty',
-                            value: 'hard'
-                        }
-                    },
                 ]
             },
             {
                 tag: 'button',
                 cls: ['form__button', 'button'],
                 content: 'Старт'
+            },
+            {
+                tag: 'div',
+                cls: ['form__error', 'form__error_hidden'],
+                content: 'Нужно выбрать уровень сложности',
             }
         ]
     }

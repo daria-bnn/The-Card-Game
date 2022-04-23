@@ -77,6 +77,7 @@ body {
 }
 
 .form {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,10 +110,20 @@ body {
   margin-bottom: 68px;
 }
 
+.block-options__input {
+  position: absolute;
+  left: -1000px;
+}
+
+.block-options__input:checked + .block-options__name {
+  background-color: #f2f1f0;
+  border: 1px solid #757578;
+}
+
 .block-options__name {
   background-color: #fff;
   border-radius: 12px;
-  border: .5px solid transparent;
+  border: 1px solid transparent;
   color: #0080C1;
   font-size: 64px;
   display: -webkit-box;
@@ -126,18 +137,13 @@ body {
           justify-content: center;
   width: 97px;
   height: 98px;
-  -webkit-transition: border .3s;
-  transition: border .3s;
+  -webkit-transition: border .3s, background-color .3s;
+  transition: border .3s, background-color .3s;
 }
 
 .block-options__name:hover {
-  border: .5px solid #0080C1;
+  border: 1px solid #0080C1;
   cursor: pointer;
-}
-
-.block-options__input {
-  position: absolute;
-  left: -1000px;
 }
 
 .button {
@@ -153,11 +159,27 @@ body {
   transition: -webkit-box-shadow .3s;
   transition: box-shadow .3s;
   transition: box-shadow .3s, -webkit-box-shadow .3s;
+  position: relative;
 }
 
 .button:hover {
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 27px 27px rgba(53, 115, 48, 0.2) inset;
           box-shadow: 0px 0px 27px 27px rgba(53, 115, 48, 0.2) inset;
+}
+
+.button_inactive {
+  background-color: rgba(53, 115, 48, 0.4);
+}
+
+.form__error {
+  position: absolute;
+  bottom: 45px;
+  font-size: 12px;
+  color: salmon;
+}
+
+.form__error_hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,23 +4,38 @@ function createForm(container) {
     container.appendChild(createTempleteCart(blockForm()));
 
     const form = container.querySelector('.form');
+    const inputs = container.querySelectorAll('.block-options__input');
+    const error = container.querySelector('.form__error');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const button = event.target.querySelectorAll('.form__button');
-        const inputs = event.target.querySelectorAll('.block-options__input');
+        const button = event.target.querySelector('.form__button');
 
         let checkValidate = false;
+
+        makeButtonInactive(button);
 
         inputs.forEach(input => {
             if (input.checked) {
                 checkValidate = true;
+
+                window.application.numberOfCards = window.levelsGame[input.value];
+
+                
             };
         });
 
         if (!checkValidate) {
-            console.log('ничего не выбрано')
-        }
+            makeButtonActive(button)
+
+            error.classList.remove('form__error_hidden');
+        };
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                error.classList.add('form__error_hidden');
+            })
+        })
     })
 }
