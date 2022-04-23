@@ -22,7 +22,7 @@ function createForm(container) {
 
                 window.application.numberOfCards = window.levelsGame[input.value];
 
-                
+                window.application.renderScreen('render-game-page');
             };
         });
 
