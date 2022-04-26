@@ -6,12 +6,12 @@ function createTempleteCart(block) {
     if (typeof block === 'string' || typeof block === 'number') {
         return document.createTextNode(block);
     }
-    
+
     if (Array.isArray(block)) {
         const fragment = document.createDocumentFragment();
-        block.forEach(element => {
+        block.forEach((element) => {
             fragment.appendChild(createTempleteCart(element));
-        })
+        });
         return fragment;
     }
 
@@ -19,15 +19,15 @@ function createTempleteCart(block) {
 
     if (block.cls) {
         const classes = [].concat(block.cls);
-        classes.forEach(cls => {
+        classes.forEach((cls) => {
             result.classList.add(cls);
-        })
+        });
     }
 
     if (block.attrs) {
         const keys = Object.keys(block.attrs);
-        keys.forEach(key => {
-            result.setAttribute(key, block.attrs[key])
+        keys.forEach((key) => {
+            result.setAttribute(key, block.attrs[key]);
         });
     }
 

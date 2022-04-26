@@ -12,7 +12,7 @@ function renderStartPage() {
     window.application.renderBlock('create-form', infoBlock);
 
     wrapper.appendChild(infoBlock);
-};
+}
 
 function renderGamePage() {
     const wrapper = document.querySelector('.block-game');

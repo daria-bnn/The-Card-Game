@@ -1,0 +1,35 @@
+{
+    "name": "card-game",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write .",
+        "lint:js": "eslint './src/**/*.js'",
+        "lint:css": "stylelint './css/*.css'",
+        "lint:scss": "stylelint '**/*.scss'; exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/daria-bnn/the-card-game.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/daria-bnn/the-card-game/issues"
+    },
+    "homepage": "https://github.com/daria-bnn/the-card-game#readme",
+    "devDependencies": {
+        "eslint": "^8.14.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.6.2",
+        "stylelint": "^14.7.1",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-config-standard-scss": "^3.0.0",
+        "stylelint-prettier": "^2.0.0",
+        "stylelint-scss": "^4.2.0"
+    }
+}

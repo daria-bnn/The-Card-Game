@@ -44,7 +44,7 @@ textarea {
 html,
 body {
   height: 100%;
-  font-family: Rubik;
+  font-family: Rubik, sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: #000;
@@ -73,7 +73,7 @@ body {
 .block-game__info-block {
   min-width: 480px;
   border-radius: 12px;
-  background-color: #C2F5FF;
+  background-color: #c2f5ff;
 }
 
 .form {
@@ -90,6 +90,17 @@ body {
           align-items: center;
   padding-top: 52px;
   padding-bottom: 68px;
+}
+
+.form__error {
+  position: absolute;
+  bottom: 45px;
+  font-size: 12px;
+  color: salmon;
+}
+
+.form__error_hidden {
+  display: none;
 }
 
 .form__title {
@@ -115,16 +126,11 @@ body {
   left: -1000px;
 }
 
-.block-options__input:checked + .block-options__name {
-  background-color: #f2f1f0;
-  border: 1px solid #757578;
-}
-
 .block-options__name {
   background-color: #fff;
   border-radius: 12px;
   border: 1px solid transparent;
-  color: #0080C1;
+  color: #0080c1;
   font-size: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,17 +143,22 @@ body {
           justify-content: center;
   width: 97px;
   height: 98px;
-  -webkit-transition: border .3s, background-color .3s;
-  transition: border .3s, background-color .3s;
+  -webkit-transition: border 0.3s, background-color 0.3s;
+  transition: border 0.3s, background-color 0.3s;
 }
 
 .block-options__name:hover {
-  border: 1px solid #0080C1;
+  border: 1px solid #0080c1;
   cursor: pointer;
 }
 
+.block-options:checked + .block-options__name {
+  background-color: #f2f1f0;
+  border: 1px solid #757578;
+}
+
 .button {
-  background-color: #7AC100;
+  background-color: #7ac100;
   border-radius: 12px;
   border: 1px solid transparent;
   font-size: 24px;
@@ -155,31 +166,20 @@ body {
   line-height: 1.33;
   width: 246px;
   height: 50px;
-  -webkit-transition: -webkit-box-shadow .3s;
-  transition: -webkit-box-shadow .3s;
-  transition: box-shadow .3s;
-  transition: box-shadow .3s, -webkit-box-shadow .3s;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   position: relative;
 }
 
 .button:hover {
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 27px 27px rgba(53, 115, 48, 0.2) inset;
-          box-shadow: 0px 0px 27px 27px rgba(53, 115, 48, 0.2) inset;
+  -webkit-box-shadow: 0 0 27px 27px #357330 inset;
+          box-shadow: 0 0 27px 27px #357330 inset;
 }
 
 .button_inactive {
-  background-color: rgba(53, 115, 48, 0.4);
-}
-
-.form__error {
-  position: absolute;
-  bottom: 45px;
-  font-size: 12px;
-  color: salmon;
-}
-
-.form__error_hidden {
-  display: none;
+  background-color: #357330;
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ function blockForm() {
             {
                 tag: 'label',
                 cls: ['form__title'],
-                content: 'Выберите сложность'
+                content: 'Выберите сложность',
             },
             {
                 tag: 'div',
@@ -19,8 +19,8 @@ function blockForm() {
                             type: 'radio',
                             id: 'difficulty-light',
                             name: 'difficulty',
-                            value: 'light'
-                        }
+                            value: 'light',
+                        },
                     },
                     {
                         tag: 'label',
@@ -28,7 +28,7 @@ function blockForm() {
                         cls: ['block-options__name'],
                         attrs: {
                             for: 'difficulty-light',
-                        }
+                        },
                     },
                     {
                         tag: 'input',
@@ -37,8 +37,8 @@ function blockForm() {
                             type: 'radio',
                             id: 'difficulty-medium',
                             name: 'difficulty',
-                            value: 'medium'
-                        }
+                            value: 'medium',
+                        },
                     },
                     {
                         tag: 'label',
@@ -46,7 +46,7 @@ function blockForm() {
                         cls: ['block-options__name'],
                         attrs: {
                             for: 'difficulty-medium',
-                        }
+                        },
                     },
                     {
                         tag: 'input',
@@ -55,8 +55,8 @@ function blockForm() {
                             type: 'radio',
                             id: 'difficulty-hard',
                             name: 'difficulty',
-                            value: 'hard'
-                        }
+                            value: 'hard',
+                        },
                     },
                     {
                         tag: 'label',
@@ -64,21 +64,20 @@ function blockForm() {
                         cls: ['block-options__name'],
                         attrs: {
                             for: 'difficulty-hard',
-                        }
+                        },
                     },
-                ]
+                ],
             },
             {
                 tag: 'button',
                 cls: ['form__button', 'button'],
-                content: 'Старт'
+                content: 'Старт',
             },
             {
                 tag: 'div',
                 cls: ['form__error', 'form__error_hidden'],
                 content: 'Нужно выбрать уровень сложности',
-            }
-        ]
-    }
+            },
+        ],
+    };
 }
-

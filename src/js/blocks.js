@@ -16,26 +16,27 @@ function createForm(container) {
 
         makeButtonInactive(button);
 
-        inputs.forEach(input => {
+        inputs.forEach((input) => {
             if (input.checked) {
                 checkValidate = true;
 
-                window.application.numberOfCards = window.levelsGame[input.value];
+                window.application.numberOfCards =
+                    window.levelsGame[input.value];
 
                 window.application.renderScreen('render-game-page');
-            };
+            }
         });
 
         if (!checkValidate) {
-            makeButtonActive(button)
+            makeButtonActive(button);
 
             error.classList.remove('form__error_hidden');
-        };
+        }
 
-        inputs.forEach(input => {
+        inputs.forEach((input) => {
             input.addEventListener('input', () => {
                 error.classList.add('form__error_hidden');
-            })
-        })
-    })
+            });
+        });
+    });
 }
