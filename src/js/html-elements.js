@@ -81,3 +81,121 @@ function blockForm() {
         ],
     };
 }
+
+function timer() {
+    return {
+        tag: 'div',
+        cls: ['block-timer'],
+        content: [
+            {
+                tag: 'div',
+                cls: ['block-timer__name'],
+                content: [
+                    {
+                        tag: 'p',
+                        content: 'min',
+                    },
+                    {
+                        tag: 'p',
+                        content: 'sek',
+                    },
+                ],
+            },
+            {
+                tag: 'div',
+                cls: ['block-timer__value'],
+                content: '00.00',
+            },
+        ],
+    };
+}
+
+function cardsElement(card) {
+    return {
+        tag: 'div',
+        cls: ['block-game__card-wrapper', 'block-game__card-wrapper_hidden'],
+        content: [
+            {
+                tag: 'div',
+                cls: ['block-game__card', 'card-block'],
+                attrs: {
+                    'dataset.value': card.cardName,
+                },
+                content: [
+                    {
+                        tag: 'div',
+                        cls: ['card-block__suit-main'],
+                        content: {
+                            tag: 'img',
+                            attrs: {
+                                src: card.cardImage,
+                                alt: 'card suit',
+                            },
+                        },
+                    },
+                    {
+                        tag: 'div',
+                        cls: ['card-block__info', 'card-block__info_top'],
+                        content: [
+                            {
+                                tag: 'p',
+                                cls: ['card-block__name'],
+                                content: card.cardValue,
+                            },
+                            {
+                                tag: 'div',
+                                cls: [
+                                    'card-block__suit',
+                                    'card-block__suit_upside',
+                                ],
+                                content: {
+                                    tag: 'img',
+                                    attrs: {
+                                        src: card.cardImage,
+                                        alt: 'card suit',
+                                    },
+                                },
+                            },
+                        ],
+                    },
+                    {
+                        tag: 'div',
+                        cls: ['card-block__info', 'card-block__info_bottom'],
+                        content: [
+                            {
+                                tag: 'div',
+                                cls: ['card-block__suit'],
+                                content: {
+                                    tag: 'img',
+                                    attrs: {
+                                        src: card.cardImage,
+                                        alt: 'card suit',
+                                    },
+                                },
+                            },
+                            {
+                                tag: 'p',
+                                cls: ['card-block__name'],
+                                content: card.cardValue,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                tag: 'div',
+                cls: [
+                    'card-block__background',
+                    'card-block__background_hidden',
+                ],
+                content: {
+                    tag: 'img',
+                    attrs: {
+                        src: './src/img/background.png',
+                        alt: 'background',
+                    },
+                },
+            },
+        ],
+    };
+}

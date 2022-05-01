@@ -14,3 +14,5 @@ window.levelsGame = {
     medium: '12',
     hard: '18',
 };
+
+

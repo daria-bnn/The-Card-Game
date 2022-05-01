@@ -62,6 +62,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -152,7 +156,7 @@ body {
   cursor: pointer;
 }
 
-.block-options:checked + .block-options__name {
+.block-options__input:checked + .block-options__name {
   background-color: #f2f1f0;
   border: 1px solid #757578;
 }
@@ -181,5 +185,167 @@ body {
 
 .button_inactive {
   background-color: #357330;
+}
+
+.block-game__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 28px;
+  padding-right: 28px;
+  margin-bottom: 36px;
+  min-width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block-timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+}
+
+.block-timer__name {
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block-timer__name p {
+  text-align: end;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.block-timer__value {
+  font-size: 64px;
+  line-height: 1.125;
+}
+
+.block-game__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+.block-game__card-wrapper {
+  position: relative;
+  width: 95px;
+  height: 133px;
+  padding: 6px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.block-game__card-wrapper:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 17px 6px #fff;
+          box-shadow: 0px 0px 17px 6px #fff;
+}
+
+.card-block {
+  min-height: 100%;
+  border-radius: 4px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-block__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+}
+
+.card-block__info_top {
+  top: 0;
+  left: 0;
+}
+
+.card-block__info_bottom {
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.card-block__suit {
+  width: 10px;
+  height: 10px;
+}
+
+.card-block__suit img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-block__name {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.33;
+}
+
+.block-game__card-wrapper_hidden .card-block__background {
+  display: none;
+}
+
+.card-block__background {
+  display: block;
+  border-radius: 4px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 121px;
+  width: 83px;
+  overflow: hidden;
+  background-color: #e4fbff;
+}
+
+.card-block__background img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 /*# sourceMappingURL=style.css.map */
