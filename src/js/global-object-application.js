@@ -2,17 +2,22 @@ window.application = {
     blocks: {},
     screens: {},
     renderScreen: function (screenName) {
+        window.application.timers.forEach(time => {
+            clearInterval(time);
+        });
+
         this.screens[screenName]();
     },
     renderBlock: function (blockName, container) {
         window.application.blocks[blockName](container);
     },
+    timers: [],
 };
 
 window.levelsGame = {
-    light: '6',
-    medium: '12',
-    hard: '18',
+    light: 3,
+    medium: 6,
+    hard: 9,
 };
 
 

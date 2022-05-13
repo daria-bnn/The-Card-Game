@@ -47,7 +47,11 @@ function createForm(container) {
 function createTimerForGame(container) {
     container.appendChild(createTempleteCart(timer()));
 
-    const timerValue = container.querySelector('.block-timer__value');
+    const startCounterTimer = counterTimes(container);
+
+    const intervalForTime = setInterval(startCounterTimer, 1000);
+
+    window.application.timers.push(intervalForTime);
 }
 
 function createButton(container) {
@@ -55,13 +59,15 @@ function createButton(container) {
     button.classList.add('button', 'block-game__button');
     button.textContent = 'Начать заново';
 
+    button.addEventListener('click', () => {
+        window.application.renderScreen('render-start-page');
+    });
+
     container.appendChild(button);
 }
 
 function createCards(container) {
-    const cardsValue = createCardValues(cardSuit, cardValue);
-
-    cardsValue.forEach((card) => {
+    getRandomArrayCards().forEach((card) => {
         container.appendChild(createTempleteCart(cardsElement(card)));
     });
 
@@ -71,7 +77,11 @@ function createCards(container) {
 
     setTimeout(() => {
         cardsBackground.forEach((card) => {
-            card.classList.remove('block-game__card-wrapper_hidden');
+            card.classList.add('block-game__card-wrapper_background');
         });
     }, 5000);
+
+    const startCheckCards = checkCards();
+
+    container.addEventListener('click', startCheckCards);
 }

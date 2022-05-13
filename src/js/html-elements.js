@@ -104,7 +104,19 @@ function timer() {
             {
                 tag: 'div',
                 cls: ['block-timer__value'],
-                content: '00.00',
+                content: [
+                    {
+                        tag: "span",
+                cls: ["block-timer__value-minute"],
+                content: "00"
+            },
+                ".",
+            {
+                tag: "span",
+                cls: ["block-timer__value-sec"],
+                content: "00"
+            }
+        ],
             },
         ],
     };
@@ -113,14 +125,14 @@ function timer() {
 function cardsElement(card) {
     return {
         tag: 'div',
-        cls: ['block-game__card-wrapper', 'block-game__card-wrapper_hidden'],
+        cls: ['block-game__card-wrapper'],
+        attrs: {
+            ["data-value-card"]: card.cardName,
+        },
         content: [
             {
                 tag: 'div',
                 cls: ['block-game__card', 'card-block'],
-                attrs: {
-                    'dataset.value': card.cardName,
-                },
                 content: [
                     {
                         tag: 'div',
