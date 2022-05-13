@@ -1,0 +1,100 @@
+.block-game {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__info-block {
+        min-width: 480px;
+        border-radius: 12px;
+        background-color: #c2f5ff;
+    }
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 52px;
+    padding-bottom: 68px;
+
+    &__error {
+        position: absolute;
+        bottom: 45px;
+        font-size: 12px;
+        color: salmon;
+
+        &_hidden {
+            display: none;
+        }
+    }
+
+    &__title {
+        width: 220px;
+        font-size: 40px;
+        line-height: 1.2;
+        color: #004980;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+}
+
+.block-options {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 68px;
+
+    &__input {
+        position: absolute;
+        left: -1000px;
+    }
+
+    &__name {
+        background-color: #fff;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        color: #0080c1;
+        font-size: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 97px;
+        height: 98px;
+        transition: border 0.3s, background-color 0.3s;
+
+        &:hover {
+            border: 1px solid #0080c1;
+            cursor: pointer;
+        }
+    }
+
+    &__input:checked + &__name {
+        background-color: #f2f1f0;
+        border: 1px solid #757578;
+    }
+}
+
+.button {
+    background-color: #7ac100;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.33;
+    width: 246px;
+    height: 50px;
+    transition: box-shadow 0.3s;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 27px 27px rgba(53, 115, 48, 20%) inset;
+    }
+
+    &_inactive {
+        background-color: rgba(53, 115, 48, 40%);
+    }
+}
