@@ -1,4 +1,6 @@
-//виузал для кнопок
+import { createCardValues, cardSuit, cardValue } from './create-cards-value';
+
+//визуал для кнопок
 
 function makeButtonInactive(button) {
     button.disabled = 'disabled';
@@ -10,23 +12,19 @@ function makeButtonActive(button) {
     button.classList.remove('button_inactive');
 }
 
-
 // функция с замыканием для таймера
 
 function counterTimes(container) {
-    const valueMinute = container.querySelector(
-        '.block-timer__value-minute'
-    );
+    const valueMinute = container.querySelector('.block-timer__value-minute');
     const valueSecond = container.querySelector('.block-timer__value-sec');
 
     let minute = 0,
-    second = -5;
+        second = -5;
 
     const result = () => {
         second++;
 
         if (second < 0) return;
-
 
         if (second < 10) {
             valueSecond.textContent = `0${second}`;
@@ -49,12 +47,12 @@ function counterTimes(container) {
         }
 
         valueMinute.textContent = `${minute}`;
-    }
+    };
 
-    return result
+    return result;
 }
 
-//создание рандомного массива карт 
+//создание рандомного массива карт
 
 function getRandomArrayCards() {
     const cardsValue = createCardValues(cardSuit, cardValue);
@@ -86,14 +84,13 @@ function getRandomArrayCards() {
     return randomArray;
 }
 
-
 //запуск игры ----> проверка карточек
 
 function checkCards() {
     let firstCard,
-    secondCard,
-    numberOfWin = 0,
-    numberOfattempt = 3;
+        secondCard,
+        numberOfWin = 0,
+        numberOfattempt = 3;
 
     const result = (event) => {
         const target = event.target;
@@ -120,6 +117,7 @@ function checkCards() {
 
             if (numberOfWin === window.application.numberOfCards) {
                 setTimeout(() => {
+                    //отрисовка экрана победы
                     alert(`Вы выиграли! Затраченное время: ${getTime()}`);
                 }, 500);
             }
@@ -138,17 +136,17 @@ function checkCards() {
 
             if (numberOfattempt === 0) {
                 setTimeout(() => {
+                    //отрисовка экрана проигрыша
                     alert(`Вы проиграли! Затраченное время: ${getTime()}`);
                 }, 0);
             }
         }, 500);
-    }
+    };
 
     return result;
 }
 
-
-//получение времени 
+//получение времени
 
 function getTime() {
     const timeMinute = document.querySelector(
@@ -160,3 +158,11 @@ function getTime() {
 
     return `${timeMinute}.${timeSec}`;
 }
+
+export {
+    makeButtonInactive,
+    makeButtonActive,
+    counterTimes,
+    getRandomArrayCards,
+    checkCards,
+};

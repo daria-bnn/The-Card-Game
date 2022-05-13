@@ -1,3 +1,5 @@
+import ImgBackground from '../img/background.png';
+
 function blockForm() {
     return {
         tag: 'form',
@@ -106,17 +108,17 @@ function timer() {
                 cls: ['block-timer__value'],
                 content: [
                     {
-                        tag: "span",
-                cls: ["block-timer__value-minute"],
-                content: "00"
-            },
-                ".",
-            {
-                tag: "span",
-                cls: ["block-timer__value-sec"],
-                content: "00"
-            }
-        ],
+                        tag: 'span',
+                        cls: ['block-timer__value-minute'],
+                        content: '00',
+                    },
+                    '.',
+                    {
+                        tag: 'span',
+                        cls: ['block-timer__value-sec'],
+                        content: '00',
+                    },
+                ],
             },
         ],
     };
@@ -127,7 +129,7 @@ function cardsElement(card) {
         tag: 'div',
         cls: ['block-game__card-wrapper'],
         attrs: {
-            ["data-value-card"]: card.cardName,
+            ['data-value-card']: card.cardName,
         },
         content: [
             {
@@ -203,7 +205,7 @@ function cardsElement(card) {
                 content: {
                     tag: 'img',
                     attrs: {
-                        src: './src/img/background.png',
+                        src: ImgBackground,
                         alt: 'background',
                     },
                 },
@@ -211,3 +213,5 @@ function cardsElement(card) {
         ],
     };
 }
+
+export { blockForm, timer, cardsElement };

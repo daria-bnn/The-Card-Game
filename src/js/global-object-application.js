@@ -2,7 +2,7 @@ window.application = {
     blocks: {},
     screens: {},
     renderScreen: function (screenName) {
-        window.application.timers.forEach(time => {
+        window.application.timers.forEach((time) => {
             clearInterval(time);
         });
 
@@ -19,5 +19,3 @@ window.levelsGame = {
     medium: 6,
     hard: 9,
 };
-
-

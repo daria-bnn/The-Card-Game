@@ -35,3 +35,5 @@ function createTempleteCart(block) {
 
     return result;
 }
+
+export { createTempleteCart };

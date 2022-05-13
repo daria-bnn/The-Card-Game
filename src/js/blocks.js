@@ -1,7 +1,14 @@
-window.application.blocks['create-form'] = createForm;
-window.application.blocks['create-timer-for-game'] = createTimerForGame;
-window.application.blocks['create-button'] = createButton;
-window.application.blocks['create-cards'] = createCards;
+import { createTempleteCart } from './render-function';
+
+import { blockForm, timer, cardsElement } from './html-elements';
+
+import {
+    makeButtonInactive,
+    makeButtonActive,
+    counterTimes,
+    getRandomArrayCards,
+    checkCards,
+} from './functions.js';
 
 function createForm(container) {
     container.appendChild(createTempleteCart(blockForm()));
@@ -85,3 +92,5 @@ function createCards(container) {
 
     container.addEventListener('click', startCheckCards);
 }
+
+export { createForm, createTimerForGame, createButton, createCards };

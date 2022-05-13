@@ -1,20 +1,25 @@
+import heartsImg from '../img/hearts.png';
+import spadesImg from '../img/spades.png';
+import diamondsImg from '../img/diamonds.png';
+import clubsImg from '../img/clubs.png';
+
 const cardValue = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6'];
 
 const cardSuit = [
     {
-        image: './src/img/spades.png',
+        image: spadesImg,
         color: 'spades',
     },
     {
-        image: './src/img/hearts.png',
+        image: heartsImg,
         color: 'hearts',
     },
     {
-        image: './src/img/diamonds.png',
+        image: diamondsImg,
         color: 'diamonds',
     },
     {
-        image: './src/img/clubs.png',
+        image: clubsImg,
         color: 'clubs',
     },
 ];
@@ -36,3 +41,5 @@ function createCardValues(cardSuit, cardValue) {
 
     return arrayCard;
 }
+
+export { createCardValues, cardSuit, cardValue };

@@ -1,6 +1,3 @@
-window.application.screens['render-start-page'] = renderStartPage;
-window.application.screens['render-game-page'] = renderGamePage;
-
 function renderStartPage() {
     const wrapper = document.querySelector('.block-game');
 
@@ -25,8 +22,6 @@ function renderGamePage() {
     const blockInfo = document.createElement('div');
     blockInfo.classList.add('block-game__info');
 
-    const cards = createCardValues(cardSuit, cardValue);
-
     window.application.renderBlock('create-cards', blockCards);
 
     window.application.renderBlock('create-timer-for-game', blockInfo);
@@ -35,3 +30,5 @@ function renderGamePage() {
     wrapper.appendChild(blockInfo);
     wrapper.appendChild(blockCards);
 }
+
+export { renderStartPage, renderGamePage };
