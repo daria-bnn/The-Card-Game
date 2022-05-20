@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
 
     &__info-block {
         min-width: 480px;

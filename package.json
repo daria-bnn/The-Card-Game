@@ -9,6 +9,7 @@
         "lint:js": "eslint './src/**/*.js'",
         "lint:css": "stylelint './css/*.css'",
         "lint:scss": "stylelint '**/*.scss'; exit 0",
+        "lint:ts": "tsc --noEmit",
         "build": "NODE_ENV=production webpack",
         "start": "NODE_ENV=development webpack-dev-server --open",
         "dev": "NODE_ENV=development webpack"
@@ -47,6 +48,8 @@
         "postcss-loader": "^6.2.1",
         "postcss-preset-env": "^7.5.0",
         "sass": "^1.51.0",
-        "sass-loader": "^12.6.0"
+        "sass-loader": "^12.6.0",
+        "ts-loader": "^9.3.0",
+        "typecript": "0.0.1-security"
     }
 }

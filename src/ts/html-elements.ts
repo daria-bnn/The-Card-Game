@@ -1,4 +1,4 @@
-import ImgBackground from '../img/background.png';
+const ImgBackground = require('../img/background.png');
 
 function blockForm() {
     return {
@@ -124,7 +124,7 @@ function timer() {
     };
 }
 
-function cardsElement(card) {
+function cardsElement(card: any) {
     return {
         tag: 'div',
         cls: ['block-game__card-wrapper'],
@@ -132,6 +132,20 @@ function cardsElement(card) {
             ['data-value-card']: card.cardName,
         },
         content: [
+            {
+                tag: 'div',
+                cls: [
+                    'card-block__background',
+                    'card-block__background_hidden',
+                ],
+                content: {
+                    tag: 'img',
+                    attrs: {
+                        src: ImgBackground,
+                        alt: 'background',
+                    },
+                },
+            },
             {
                 tag: 'div',
                 cls: ['block-game__card', 'card-block'],
@@ -196,22 +210,33 @@ function cardsElement(card) {
                     },
                 ],
             },
+        ],
+    };
+}
+
+function blockResult(image, result: string) {
+    return {
+        tag: 'div',
+        cls: ['result__info', 'info-result'],
+        content: [
             {
                 tag: 'div',
-                cls: [
-                    'card-block__background',
-                    'card-block__background_hidden',
-                ],
+                cls: ['info-result__image'],
                 content: {
                     tag: 'img',
                     attrs: {
-                        src: ImgBackground,
-                        alt: 'background',
+                        src: image,
+                        alt: 'smile',
                     },
                 },
+            },
+            {
+                tag: 'p',
+                cls: ['info-result__message-result'],
+                content: `Вы ${result}!`,
             },
         ],
     };
 }
 
-export { blockForm, timer, cardsElement };
+export { blockForm, timer, cardsElement, blockResult };
