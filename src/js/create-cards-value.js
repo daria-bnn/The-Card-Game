@@ -27,16 +27,30 @@ const cardSuit = [
 function createCardValues(cardSuit, cardValue) {
     const arrayCard = [];
 
-    cardSuit.forEach((card) => {
-        cardValue.forEach((value) => {
-            const infoAboutCard = {};
+    cardValue.forEach((value) => {
+        const infoAboutCardSpades = {};
+        infoAboutCardSpades.cardValue = value;
+        infoAboutCardSpades.cardImage = cardSuit[0].image;
+        infoAboutCardSpades.cardName = `${value}-${cardSuit[0].color}`;
+        arrayCard.push(infoAboutCardSpades);
 
-            infoAboutCard.cardValue = value;
-            infoAboutCard.cardImage = card.image;
-            infoAboutCard.cardName = `${value}-${card.color}`;
+        const infoAboutCardHearts = {};
+        infoAboutCardHearts.cardValue = value;
+        infoAboutCardHearts.cardImage = cardSuit[1].image;
+        infoAboutCardHearts.cardName = `${value}-${cardSuit[1].color}`;
+        arrayCard.push(infoAboutCardHearts);
 
-            arrayCard.push(infoAboutCard);
-        });
+        const infoAboutCardDiamonds = {};
+        infoAboutCardDiamonds.cardValue = value;
+        infoAboutCardDiamonds.cardImage = cardSuit[2].image;
+        infoAboutCardDiamonds.cardName = `${value}-${cardSuit[2].color}`;
+        arrayCard.push(infoAboutCardDiamonds);
+
+        const infoAboutCardClubs = {};
+        infoAboutCardClubs.cardValue = value;
+        infoAboutCardClubs.cardImage = cardSuit[3].image;
+        infoAboutCardClubs.cardName = `${value}-${cardSuit[3].color}`;
+        arrayCard.push(infoAboutCardClubs);
     });
 
     return arrayCard;

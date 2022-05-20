@@ -1,14 +1,16 @@
-import { createTempleteCart } from './render-function';
+import { createTempleteCart } from './create-template-card';
 
-import { blockForm, timer, cardsElement } from './html-elements';
+import { blockForm } from './blocks-html/form';
+import { timer } from './blocks-html/timer';
+import { cardsElement } from './blocks-html/cards-element';
+
+import { makeButtonInactive, makeButtonActive } from './utils';
 
 import {
-    makeButtonInactive,
-    makeButtonActive,
     counterTimes,
     getRandomArrayCards,
     checkCards,
-} from './functions.js';
+} from './main-logic-game';
 
 function createForm(container) {
     container.appendChild(createTempleteCart(blockForm()));

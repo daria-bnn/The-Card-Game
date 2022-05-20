@@ -1,19 +1,5 @@
 import { createCardValues, cardSuit, cardValue } from './create-cards-value';
 
-//визуал для кнопок
-
-function makeButtonInactive(button) {
-    button.disabled = 'disabled';
-    button.classList.add('button_inactive');
-}
-
-function makeButtonActive(button) {
-    button.disabled = '';
-    button.classList.remove('button_inactive');
-}
-
-// функция с замыканием для таймера
-
 function counterTimes(container) {
     const valueMinute = container.querySelector('.block-timer__value-minute');
     const valueSecond = container.querySelector('.block-timer__value-sec');
@@ -52,8 +38,6 @@ function counterTimes(container) {
     return result;
 }
 
-//создание рандомного массива карт
-
 function getRandomArrayCards() {
     const cardsValue = createCardValues(cardSuit, cardValue);
 
@@ -83,8 +67,6 @@ function getRandomArrayCards() {
 
     return randomArray;
 }
-
-//запуск игры ----> проверка карточек
 
 function checkCards() {
     let firstCard,
@@ -117,7 +99,6 @@ function checkCards() {
 
             if (numberOfWin === window.application.numberOfCards) {
                 setTimeout(() => {
-                    //отрисовка экрана победы
                     alert(`Вы выиграли! Затраченное время: ${getTime()}`);
                 }, 500);
             }
@@ -136,7 +117,6 @@ function checkCards() {
 
             if (numberOfattempt === 0) {
                 setTimeout(() => {
-                    //отрисовка экрана проигрыша
                     alert(`Вы проиграли! Затраченное время: ${getTime()}`);
                 }, 0);
             }
@@ -145,8 +125,6 @@ function checkCards() {
 
     return result;
 }
-
-//получение времени
 
 function getTime() {
     const timeMinute = document.querySelector(
@@ -159,10 +137,4 @@ function getTime() {
     return `${timeMinute}.${timeSec}`;
 }
 
-export {
-    makeButtonInactive,
-    makeButtonActive,
-    counterTimes,
-    getRandomArrayCards,
-    checkCards,
-};
+export { counterTimes, getRandomArrayCards, checkCards };
