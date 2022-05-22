@@ -1,4 +1,4 @@
-const ImgBackground = require('../img/background.png');
+const ImgBackground = require('/src/img/background.png');
 
 function cardsElement(card) {
     return {

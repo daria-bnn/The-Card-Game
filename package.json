@@ -50,5 +50,8 @@
         "sass-loader": "^12.6.0",
         "ts-loader": "^9.3.0",
         "typecript": "0.0.1-security"
+    },
+    "dependencies": {
+        "typescript": "^4.6.4"
     }
 }
