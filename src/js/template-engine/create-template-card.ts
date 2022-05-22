@@ -1,9 +1,9 @@
-export function createTempleteCart(block) {
+export function createTempleteCart(block: any) {
     if (block === undefined) {
         return document.createTextNode('');
     }
 
-    if (typeof block === 'string' || typeof block === 'number') {
+    if (typeof block === 'string') {
         return document.createTextNode(block);
     }
 

@@ -1,4 +1,4 @@
-import ImgBackground from '/src/img/background.png';
+const ImgBackground = require('../img/background.png');
 
 function cardsElement(card) {
     return {
