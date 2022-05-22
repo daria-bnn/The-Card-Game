@@ -1,11 +1,9 @@
-function makeButtonInactive(button) {
+export function makeButtonInactive(button) {
     button.disabled = 'disabled';
     button.classList.add('button_inactive');
 }
 
-function makeButtonActive(button) {
+export function makeButtonActive(button) {
     button.disabled = '';
     button.classList.remove('button_inactive');
 }
-
-export { makeButtonInactive, makeButtonActive };

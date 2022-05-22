@@ -1,6 +1,6 @@
 import { createCardValues, cardSuit, cardValue } from './create-cards-value';
 
-function counterTimes(container) {
+export function counterTimes(container) {
     const valueMinute = container.querySelector('.block-timer__value-minute');
     const valueSecond = container.querySelector('.block-timer__value-sec');
 
@@ -38,7 +38,7 @@ function counterTimes(container) {
     return result;
 }
 
-function getRandomArrayCards() {
+export function getRandomArrayCards() {
     const cardsValue = createCardValues(cardSuit, cardValue);
 
     let randomArray = [];
@@ -68,7 +68,7 @@ function getRandomArrayCards() {
     return randomArray;
 }
 
-function checkCards() {
+export function checkCards() {
     let firstCard,
         secondCard,
         numberOfWin = 0,
@@ -126,7 +126,7 @@ function checkCards() {
     return result;
 }
 
-function getTime() {
+export function getTime() {
     const timeMinute = document.querySelector(
         '.block-timer__value-minute'
     ).textContent;
@@ -136,5 +136,3 @@ function getTime() {
 
     return `${timeMinute}.${timeSec}`;
 }
-
-export { counterTimes, getRandomArrayCards, checkCards };

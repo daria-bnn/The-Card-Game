@@ -3,11 +3,11 @@ import {
     createTimerForGame,
     createButton,
     createCards,
-} from './blocks';
+} from '../blocks';
 
-import { renderStartPage, renderGamePage } from './screens';
+import { renderStartPage, renderGamePage } from '../screens';
 
-function initGameState() {
+export function initGameState() {
     return (window.application = {
         blocks: {
             ['create-form']: createForm,
@@ -32,5 +32,3 @@ function initGameState() {
         timers: [],
     });
 }
-
-export { initGameState };

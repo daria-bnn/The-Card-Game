@@ -1,4 +1,4 @@
-import { createTempleteCart } from './create-template-card';
+import { createTempleteCart } from './template-engine/create-template-card';
 
 import { blockForm } from './blocks-html/form';
 import { timer } from './blocks-html/timer';
@@ -12,7 +12,7 @@ import {
     checkCards,
 } from './main-logic-game';
 
-function createForm(container) {
+export function createForm(container) {
     container.appendChild(createTempleteCart(blockForm()));
 
     const form = container.querySelector('.form');
@@ -53,7 +53,7 @@ function createForm(container) {
     });
 }
 
-function createTimerForGame(container) {
+export function createTimerForGame(container) {
     container.appendChild(createTempleteCart(timer()));
 
     const startCounterTimer = counterTimes(container);
@@ -63,7 +63,7 @@ function createTimerForGame(container) {
     window.application.timers.push(intervalForTime);
 }
 
-function createButton(container) {
+export function createButton(container) {
     const button = document.createElement('button');
     button.classList.add('button', 'block-game__button');
     button.textContent = 'Начать заново';
@@ -75,7 +75,7 @@ function createButton(container) {
     container.appendChild(button);
 }
 
-function createCards(container) {
+export function createCards(container) {
     getRandomArrayCards().forEach((card) => {
         container.appendChild(createTempleteCart(cardsElement(card)));
     });
@@ -94,5 +94,3 @@ function createCards(container) {
 
     container.addEventListener('click', startCheckCards);
 }
-
-export { createForm, createTimerForGame, createButton, createCards };

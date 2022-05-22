@@ -1,4 +1,4 @@
-function createTempleteCart(block) {
+export function createTempleteCart(block) {
     if (block === undefined) {
         return document.createTextNode('');
     }
@@ -35,5 +35,3 @@ function createTempleteCart(block) {
 
     return result;
 }
-
-export { createTempleteCart };

@@ -1,10 +1,10 @@
 import '../styles/style.scss';
 
-import { initGameState } from './init-game-state';
-import { levelsGame } from './info-about-levels-game';
+import { initGameState } from './state/init-game-state';
+import { initGameLevesState } from './state/init-game-leves-state';
 
 initGameState();
-levelsGame();
+initGameLevesState();
 
 document.addEventListener('DOMContentLoaded', () => {
     window.application.renderScreen('render-start-page');

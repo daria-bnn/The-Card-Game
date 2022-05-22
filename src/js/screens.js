@@ -1,4 +1,4 @@
-function renderStartPage() {
+export function renderStartPage() {
     const wrapper = document.querySelector('.block-game');
 
     wrapper.innerHTML = '';
@@ -11,7 +11,7 @@ function renderStartPage() {
     wrapper.appendChild(infoBlock);
 }
 
-function renderGamePage() {
+export function renderGamePage() {
     const wrapper = document.querySelector('.block-game');
 
     wrapper.innerHTML = '';
@@ -30,5 +30,3 @@ function renderGamePage() {
     wrapper.appendChild(blockInfo);
     wrapper.appendChild(blockCards);
 }
-
-export { renderStartPage, renderGamePage };
