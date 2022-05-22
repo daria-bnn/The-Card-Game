@@ -10,6 +10,20 @@ function cardsElement(card) {
         content: [
             {
                 tag: 'div',
+                cls: [
+                    'card-block__background',
+                    'card-block__background_hidden',
+                ],
+                content: {
+                    tag: 'img',
+                    attrs: {
+                        src: ImgBackground,
+                        alt: 'background',
+                    },
+                },
+            },
+            {
+                tag: 'div',
                 cls: ['block-game__card', 'card-block'],
                 content: [
                     {
@@ -71,20 +85,6 @@ function cardsElement(card) {
                         ],
                     },
                 ],
-            },
-            {
-                tag: 'div',
-                cls: [
-                    'card-block__background',
-                    'card-block__background_hidden',
-                ],
-                content: {
-                    tag: 'img',
-                    attrs: {
-                        src: ImgBackground,
-                        alt: 'background',
-                    },
-                },
             },
         ],
     };
