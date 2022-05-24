@@ -12,8 +12,7 @@
         "lint": "npm run lint:ts && npm run lint:scss",
         "prepare": "husky install",
         "build": "NODE_ENV=production webpack",
-        "start": "NODE_ENV=development webpack-dev-server --open",
-        "dev": "NODE_ENV=development webpack"
+        "start": "NODE_ENV=development webpack-dev-server --open"
     },
     "repository": {
         "type": "git",

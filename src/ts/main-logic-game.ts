@@ -2,7 +2,7 @@ import { createCardValues, cardSuit, cardValue } from './create-cards-value';
 
 import { addAnimation, deleteAnimationClass } from './utils/utils';
 
-type oneCard = {
+type OneCard = {
     cardName?: string;
     cardValue?: string;
     cardImage?: string;
@@ -52,10 +52,10 @@ export function counterTimes(container: HTMLDivElement) {
     return result;
 }
 
-export function getRandomArrayCards(): oneCard[] {
-    const cardsValue: oneCard[] = createCardValues(cardSuit, cardValue);
+export function getRandomArrayCards(): OneCard[] {
+    const cardsValue: OneCard[] = createCardValues(cardSuit, cardValue);
 
-    let randomArray: oneCard[] = [];
+    let randomArray: OneCard[] = [];
 
     for (let i = 0; i < window.numberOfCards; i++) {
         let randomNumber: number =

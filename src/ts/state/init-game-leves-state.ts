@@ -1,15 +1,15 @@
 export function initGameLevesState() {
     window.levelsGame = {
         light: {
-            cards: 3,
+            cardsPairs: 3,
             attempt: 2,
         },
         medium: {
-            cards: 6,
+            cardsPairs: 6,
             attempt: 3,
         },
         hard: {
-            cards: 9,
+            cardsPairs: 9,
             attempt: 6,
         },
     };

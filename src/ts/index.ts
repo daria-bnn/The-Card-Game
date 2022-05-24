@@ -4,7 +4,7 @@ import { initGameState } from './state/init-game-state';
 import { initGameLevesState } from './state/init-game-leves-state';
 
 type CaptionLevel = {
-    cards: number;
+    cardsPairs: number;
     attempt: number;
 };
 

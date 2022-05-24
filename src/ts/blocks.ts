@@ -45,7 +45,8 @@ export function createForm(container: HTMLDivElement) {
                     input.value === 'medium' ||
                     input.value === 'hard'
                 ) {
-                    window.numberOfCards = window.levelsGame[input.value].cards;
+                    window.numberOfCards =
+                        window.levelsGame[input.value].cardsPairs;
                     window.attempt = window.levelsGame[input.value].attempt;
                 }
 
