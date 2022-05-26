@@ -6,13 +6,12 @@ extends:
     ]
 
 plugins: ['stylelint-scss']
-
 rules:
-    'at-rule-no-unknown': null
-    'scss/at-rule-no-unknown': true
-    'scss/dollar-variable-pattern': '^color'
-    'scss/selector-no-redundant-nesting-selector': true
-    'color-function-notation': legacy
-    'font-family-no-missing-generic-family-keyword': true
+    # 'at-rule-no-unknown': null
+    # 'scss/at-rule-no-unknown': true
+    # 'scss/dollar-variable-pattern': '^color'
+    # 'scss/selector-no-redundant-nesting-selector': true
+    # 'color-function-notation': legacy
+    # 'font-family-no-missing-generic-family-keyword': true
 
 overrides: [{ files: ['**/*.scss'], customSyntax: 'postcss-scss' }]
