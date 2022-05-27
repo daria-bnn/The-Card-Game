@@ -1,6 +1,6 @@
 const ImgBackground = require('/src/img/background.png');
 
-function cardsElement(card) {
+export function cardsElement(card) {
     return {
         tag: 'div',
         cls: ['block-game__card-wrapper'],
@@ -89,5 +89,3 @@ function cardsElement(card) {
         ],
     };
 }
-
-export { cardsElement };

@@ -8,7 +8,7 @@
         "format": "prettier --write .",
         "lint:js": "eslint './src/**/*.js'",
         "lint:ts": "tsc --noEmit",
-        "lint:scss": "stylelint '**/*.scss'; exit 0",
+        "lint:scss": "stylelint '**/*.scss; exit 0'",
         "lint": "npm run lint:ts && npm run lint:scss",
         "prepare": "husky install",
         "build": "NODE_ENV=production webpack",
