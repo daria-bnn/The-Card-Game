@@ -7,13 +7,12 @@ extends:
 
 plugins: ['stylelint-scss']
 rules:
-    # 'comment-no-empty': null
-    # 'scss/comment-no-empty': true
-    # 'at-rule-no-unknown': null
-    # 'scss/at-rule-no-unknown': true
-    # 'scss/dollar-variable-pattern': '^color'
-    # 'scss/selector-no-redundant-nesting-selector': true
-    # 'color-function-notation': legacy
-    # 'font-family-no-missing-generic-family-keyword': true
+    'comment-no-empty': null
+    'scss/comment-no-empty': true
+    'at-rule-no-unknown': null
+    'scss/at-rule-no-unknown': true
+    'scss/dollar-variable-pattern': [/^foo-/, { 'ignore': 'global' }]
+    'scss/selector-no-redundant-nesting-selector': true
+    'font-family-no-missing-generic-family-keyword': true
 
 overrides: [{ files: ['**/*.scss'], customSyntax: 'postcss-scss' }]
