@@ -1,3 +1,5 @@
+// import { HtmlEl } from '../types';
+
 export function createTempleteCart(block: any) {
     if (block === undefined) {
         return document.createTextNode('');

@@ -1,6 +1,6 @@
 @font-face {
     font-family: generalFont;
-    src: url('../fonts/Rubik-VariableFont_wght.ttf');
+    src: url('../fonts/Rubik-Regular.woff');
 }
 
 :root {
@@ -58,4 +58,12 @@ body {
 .center {
     padding-right: calc(50% - 326px);
     padding-left: calc(50% - 326px);
+}
+
+.block-game {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -7,7 +7,7 @@ export function renderStartPage(): void {
     }
 
     const infoBlock = document.createElement('div');
-    infoBlock.classList.add('block-game__info-block');
+    infoBlock.classList.add('reg-block');
 
     window.application.renderBlock('create-form', infoBlock);
 

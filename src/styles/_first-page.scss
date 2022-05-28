@@ -1,15 +1,7 @@
-.block-game {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &__info-block {
-        min-width: 480px;
-        border-radius: 12px;
-        background-color: #c2f5ff;
-    }
+.reg-block {
+    min-width: 480px;
+    border-radius: 12px;
+    background-color: $light-background;
 }
 
 .form {
@@ -24,7 +16,7 @@
         position: absolute;
         bottom: 45px;
         font-size: 12px;
-        color: salmon;
+        color: $color-for-errors;
 
         &_hidden {
             display: none;
@@ -35,7 +27,7 @@
         width: 220px;
         font-size: 40px;
         line-height: 1.2;
-        color: #004980;
+        color: $main-color;
         text-align: center;
         margin-bottom: 48px;
     }
@@ -53,10 +45,11 @@
     }
 
     &__name {
+        @include border(transparent);
+
         background-color: #fff;
         border-radius: 12px;
-        border: 1px solid transparent;
-        color: #0080c1;
+        color: $secondary-color;
         font-size: 64px;
         display: flex;
         align-items: center;
@@ -66,21 +59,23 @@
         transition: border 0.3s, background-color 0.3s;
 
         &:hover {
-            border: 1px solid #0080c1;
+            @include border($secondary-color);
+
             cursor: pointer;
         }
     }
 
     &__input:checked + &__name {
+        @include border(#757578);
+
         background-color: #f2f1f0;
-        border: 1px solid #757578;
     }
 }
 
 .button {
-    background-color: #7ac100;
+    background-color: $button-color;
     border-radius: 12px;
-    border: 1px solid transparent;
+    border: none;
     font-size: 24px;
     color: #fff;
     line-height: 1.33;
@@ -91,10 +86,10 @@
 
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 27px 27px rgba(53, 115, 48, 20%) inset;
+        box-shadow: 0 0 27px 27px rgb(8 32 7 / 20%) inset;
     }
 
     &_inactive {
-        background-color: rgba(53, 115, 48, 40%);
+        background-color: rgb(53 115 48 / 20%);
     }
 }

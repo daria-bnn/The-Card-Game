@@ -12,7 +12,7 @@
     }
 }
 
-.block-game__info {
+.block-info {
     display: flex;
     margin-bottom: 36px;
     min-width: 100%;
@@ -53,55 +53,65 @@
     }
 }
 
-.block-game__cards {
+.block-cards {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
     perspective: 1000px;
-}
 
-.block-game__card-wrapper {
-    position: relative;
-    width: 95px;
-    height: 133px;
-    padding: 6px;
-    background-color: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transition: transform 0.5s, box-shadow 0.3s;
+    &__card-wrapper {
+        position: relative;
+        width: 95px;
+        height: 133px;
+        padding: 6px;
+        background-color: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transition: transform 0.5s, box-shadow 0.3s;
 
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 17px 6px #fff;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 17px 6px #fff;
+        }
+
+        &.flip {
+            transform: rotateY(180deg);
+        }
     }
-
-    &.flip {
-        transform: rotateY(180deg);
-    }
-}
-
-.card-block,
-.card-block__background {
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 6px;
-    border-radius: 4px;
-    transition: 0.5s;
-    background-color: #fff;
-    backface-visibility: hidden;
 }
 
 .card-block {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &,
+    &__background {
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 6px;
+        border-radius: 4px;
+        transition: 0.5s;
+        background-color: #fff;
+        backface-visibility: hidden;
+    }
+
+    &__background {
+        background-color: #e4fbff;
+
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
 }
 
 .flip .card-block {
@@ -109,7 +119,7 @@
     transform: rotateY(180deg);
 }
 
-.card-block__info {
+.info-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,37 +135,24 @@
         right: 6px;
         transform: rotate(180deg);
     }
-}
 
-.card-block__suit {
-    width: 10px;
-    height: 10px;
+    &__suit {
+        width: 10px;
+        height: 10px;
 
-    & img {
-        display: block;
-        width: 100%;
-        height: auto;
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+        text-transform: uppercase;
+        line-height: 1.33;
     }
 }
-
-.card-block__name {
-    font-size: 24px;
-    text-transform: uppercase;
-    line-height: 1.33;
-}
-
-.card-block__background {
-    background-color: #e4fbff;
-
-    & img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-}
-
-// .block-game__card-wrapper_background .card-block__background {
-// }
 
 .attempt {
     color: #fff;

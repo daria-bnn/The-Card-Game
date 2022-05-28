@@ -15,7 +15,5 @@ rules:
     # 'scss/selector-no-redundant-nesting-selector': true
     # 'color-function-notation': legacy
     # 'font-family-no-missing-generic-family-keyword': true
-    Comment:
-    enabled: false
 
 overrides: [{ files: ['**/*.scss'], customSyntax: 'postcss-scss' }]

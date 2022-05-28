@@ -1,3 +1,5 @@
+import { Nullable } from '../types';
+
 export function makeButtonInactive(button: HTMLButtonElement | null): void {
     if (!button) return;
 

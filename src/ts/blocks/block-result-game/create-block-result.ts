@@ -1,5 +1,5 @@
-const ImgWin = require('/src/img/win.png');
-const ImgLoss = require('/src/img/loss.png');
+import ImgWin from '/src/img/win.png';
+import ImgLoss from '/src/img/loss.png';
 
 import { createTempleteCart } from '../../template-engine/create-template-card';
 import { blockResult } from '../../blocks-html/result-block-element';

@@ -6,11 +6,11 @@ export function renderGamePage(): void {
         wrapper.innerHTML = '';
     }
 
-    const blockCards = document.createElement('div');
-    blockCards.classList.add('block-game__cards');
-
     const blockInfo = document.createElement('div');
-    blockInfo.classList.add('block-game__info');
+    blockInfo.classList.add('block-game__info', 'block-info');
+
+    const blockCards = document.createElement('div');
+    blockCards.classList.add('block-game__cards', 'block-cards');
 
     window.application.renderBlock('create-cards', blockCards);
 

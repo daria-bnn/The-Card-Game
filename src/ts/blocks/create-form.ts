@@ -2,13 +2,19 @@ import { createTempleteCart } from '../template-engine/create-template-card';
 import { blockForm } from '../blocks-html/form';
 import { makeButtonInactive, makeButtonActive } from '../utils/utils';
 
-export function createForm(container: HTMLDivElement) {
+enum Levels {
+    Light = 'light',
+    Medium = 'medium',
+    Hard = 'hard',
+}
+export function createForm(container: HTMLDivElement): void {
     container?.appendChild(createTempleteCart(blockForm()));
 
-    const form: HTMLFormElement | null = container.querySelector('.form');
+    const form = container.querySelector('.form');
     const inputs: NodeListOf<HTMLInputElement> = container.querySelectorAll(
         '.block-options__input'
     );
+
     const error = container.querySelector('.form__error');
 
     form?.addEventListener('submit', (event): void => {
@@ -26,9 +32,9 @@ export function createForm(container: HTMLDivElement) {
                 checkValidate = true;
 
                 if (
-                    input.value === 'light' ||
-                    input.value === 'medium' ||
-                    input.value === 'hard'
+                    input.value === Levels.Light ||
+                    input.value === Levels.Medium ||
+                    input.value === Levels.Hard
                 ) {
                     window.numberOfCards =
                         window.levelsGame[input.value].cardsPairs;
@@ -44,11 +50,15 @@ export function createForm(container: HTMLDivElement) {
 
             error?.classList.remove('form__error_hidden');
         }
+    });
 
-        inputs.forEach((input) => {
-            input.addEventListener('input', () => {
-                error?.classList.add('form__error_hidden');
-            });
-        });
+    form?.addEventListener('click', (event) => {
+        const target = <HTMLElement>event.target;
+
+        if (target.closest('.block-options__name')) {
+            error?.classList.add('form__error_hidden');
+            console.log('click');
+            return;
+        }
     });
 }

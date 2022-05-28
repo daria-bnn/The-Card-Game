@@ -1,19 +1,18 @@
-const ImgBackground = require('/src/img/background.png');
+import ImgBackground from '/src/img/background.png';
 
-export function cardsElement(card) {
+import { HtmlEl, Card } from '../types';
+
+export function cardsElement(card: Card): HtmlEl {
     return {
         tag: 'div',
-        cls: ['block-game__card-wrapper'],
+        cls: ['block-cards__card-wrapper'],
         attrs: {
             ['data-value-card']: card.cardName,
         },
         content: [
             {
                 tag: 'div',
-                cls: [
-                    'card-block__background',
-                    'card-block__background_hidden',
-                ],
+                cls: ['card-block__background'],
                 content: {
                     tag: 'img',
                     attrs: {
@@ -24,7 +23,7 @@ export function cardsElement(card) {
             },
             {
                 tag: 'div',
-                cls: ['block-game__card', 'card-block'],
+                cls: ['block-game__cards', 'card-block'],
                 content: [
                     {
                         tag: 'div',
@@ -39,19 +38,16 @@ export function cardsElement(card) {
                     },
                     {
                         tag: 'div',
-                        cls: ['card-block__info', 'card-block__info_top'],
+                        cls: ['card-block__info', 'info-card', 'info-card_top'],
                         content: [
                             {
                                 tag: 'p',
-                                cls: ['card-block__name'],
+                                cls: ['info-card__name'],
                                 content: card.cardValue,
                             },
                             {
                                 tag: 'div',
-                                cls: [
-                                    'card-block__suit',
-                                    'card-block__suit_upside',
-                                ],
+                                cls: ['info-card__suit'],
                                 content: {
                                     tag: 'img',
                                     attrs: {
@@ -64,11 +60,20 @@ export function cardsElement(card) {
                     },
                     {
                         tag: 'div',
-                        cls: ['card-block__info', 'card-block__info_bottom'],
+                        cls: [
+                            'card-block__info',
+                            'info-card',
+                            'info-card_bottom',
+                        ],
                         content: [
                             {
+                                tag: 'p',
+                                cls: ['info-card__name'],
+                                content: card.cardValue,
+                            },
+                            {
                                 tag: 'div',
-                                cls: ['card-block__suit'],
+                                cls: ['info-card__suit'],
                                 content: {
                                     tag: 'img',
                                     attrs: {
@@ -76,11 +81,6 @@ export function cardsElement(card) {
                                         alt: 'card suit',
                                     },
                                 },
-                            },
-                            {
-                                tag: 'p',
-                                cls: ['card-block__name'],
-                                content: card.cardValue,
                             },
                         ],
                     },

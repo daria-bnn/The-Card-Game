@@ -1,4 +1,4 @@
-export function blockResult(image, result: string) {
+export function blockResult(image, content: string) {
     return {
         tag: 'div',
         cls: ['result__info', 'info-result'],
@@ -17,7 +17,7 @@ export function blockResult(image, result: string) {
             {
                 tag: 'p',
                 cls: ['info-result__message-result'],
-                content: `Вы ${result}!`,
+                content: `Вы ${content}!`,
             },
         ],
     };

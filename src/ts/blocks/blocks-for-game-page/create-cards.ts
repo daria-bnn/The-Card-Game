@@ -9,7 +9,7 @@ export function createCards(container: HTMLDivElement) {
     });
 
     const cardsBackground = container.querySelectorAll(
-        '.block-game__card-wrapper'
+        '.block-cards__card-wrapper'
     );
 
     setTimeout(() => {

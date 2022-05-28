@@ -1,7 +1,9 @@
-function blockForm() {
+import { HtmlEl } from '../types';
+
+function blockForm(): HtmlEl {
     return {
         tag: 'form',
-        cls: ['block-game__form', 'form'],
+        cls: ['reg-block__form', 'form'],
         content: [
             {
                 tag: 'label',

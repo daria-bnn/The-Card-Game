@@ -1,12 +1,8 @@
+import { Card } from './types';
+
 import { createCardValues, cardSuit, cardValue } from './create-cards-value';
 
 import { addAnimation, deleteAnimationClass } from './utils/utils';
-
-type OneCard = {
-    cardName?: string;
-    cardValue?: string;
-    cardImage?: string;
-};
 
 export function counterTimes(container: HTMLDivElement) {
     const valueMinute: HTMLSpanElement | null = container.querySelector(
@@ -52,10 +48,10 @@ export function counterTimes(container: HTMLDivElement) {
     return result;
 }
 
-export function getRandomArrayCards(): OneCard[] {
-    const cardsValue: OneCard[] = createCardValues(cardSuit, cardValue);
+export function getRandomArrayCards(): Card[] {
+    const cardsValue: Card[] = createCardValues(cardSuit, cardValue);
 
-    let randomArray: OneCard[] = [];
+    let randomArray: Card[] = [];
 
     for (let i = 0; i < window.numberOfCards; i++) {
         let randomNumber: number =
@@ -92,7 +88,7 @@ export function checkCards() {
         const target = event.target;
 
         if (
-            !target.closest('.block-game__card-wrapper_background') &&
+            !target.closest('.block-cards__card-wrapper_background') &&
             !target.closest('.flip')
         )
             return;
@@ -100,13 +96,13 @@ export function checkCards() {
         if (firstCard && secondCard) return;
 
         if (!firstCard) {
-            firstCard = target.closest('.block-game__card-wrapper');
+            firstCard = target.closest('.block-cards__card-wrapper');
             firstCard?.classList.remove('flip');
 
             return;
         }
 
-        secondCard = target.closest('.block-game__card-wrapper');
+        secondCard = target.closest('.block-cards__card-wrapper');
         secondCard?.classList.remove('flip');
 
         if (firstCard?.dataset.valueCard === secondCard?.dataset.valueCard) {
