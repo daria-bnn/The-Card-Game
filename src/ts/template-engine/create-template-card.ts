@@ -1,16 +1,19 @@
-// import { HtmlEl } from '../types';
+import { HtmlEl } from '../types';
 
-export function createTempleteCart(block: any) {
+export function createTempleteCart(
+    block: HtmlEl | HtmlEl[] | string | (HtmlEl | string)[] | undefined
+): Text | DocumentFragment | HTMLElement {
     if (block === undefined) {
         return document.createTextNode('');
     }
-
     if (typeof block === 'string') {
-        return document.createTextNode(block);
+        const text = document.createTextNode(block);
+        return text;
     }
 
     if (Array.isArray(block)) {
         const fragment = document.createDocumentFragment();
+
         block.forEach((element) => {
             fragment.appendChild(createTempleteCart(element));
         });
@@ -20,7 +23,9 @@ export function createTempleteCart(block: any) {
     const result = document.createElement(block.tag);
 
     if (block.cls) {
-        const classes = [].concat(block.cls);
+        const newArray: string[] = [];
+        const classes = newArray.concat(block.cls);
+
         classes.forEach((cls) => {
             result.classList.add(cls);
         });
@@ -28,8 +33,11 @@ export function createTempleteCart(block: any) {
 
     if (block.attrs) {
         const keys = Object.keys(block.attrs);
+
         keys.forEach((key) => {
-            result.setAttribute(key, block.attrs[key]);
+            if (block.attrs) {
+                result.setAttribute(key, block.attrs[key]);
+            }
         });
     }
 

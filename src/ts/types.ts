@@ -4,30 +4,30 @@ type CaptionLevel = {
 };
 
 type Blocks = {
-    ['create-form']: any;
-    ['create-timer-for-game']: any;
-    ['create-button']: any;
-    ['create-cards']: any;
-    ['create-attemts']: any;
-    ['create-block-win']: any;
-    ['create-block-loss']: any;
-    ['create-block-show-time']: any;
-    ['create-button-again']: any;
+    ['create-form']: (container: HTMLDivElement) => void;
+    ['create-timer-for-game']: (container: HTMLDivElement) => void;
+    ['create-button']: (container: HTMLDivElement) => void;
+    ['create-cards']: (container: HTMLDivElement) => void;
+    ['create-attemts']: (container: HTMLDivElement) => void;
+    ['create-block-win']: (container: HTMLDivElement) => void;
+    ['create-block-loss']: (container: HTMLDivElement) => void;
+    ['create-block-show-time']: (container: HTMLDivElement) => void;
+    ['create-button-again']: (container: HTMLDivElement) => void;
 };
 
 type Screens = {
-    ['render-start-page']: any;
-    ['render-game-page']: any;
-    ['render-win-page']: any;
-    ['render-loss-page']: any;
+    ['render-start-page']: () => void;
+    ['render-game-page']: () => void;
+    ['render-win-page']: () => void;
+    ['render-loss-page']: () => void;
 };
 
 type App = {
     blocks: Blocks;
     screens: Screens;
-    renderScreen: any;
-    renderBlock: any;
-    timers: any[];
+    renderScreen: (screenName: string) => void;
+    renderBlock: (blockName: string, container: HTMLElement) => void;
+    timers: number[];
 };
 
 declare global {
@@ -44,7 +44,7 @@ declare global {
 }
 
 export type CardSuit = {
-    image: any;
+    image: string;
     color: string;
 };
 
@@ -61,15 +61,16 @@ type Attribute = {
     value?: string;
     for?: string;
     'data-value-card'?: string;
-    src?: any;
+    'data-show-card'?: boolean;
+    src?: string;
     alt?: string;
 };
 
 export type HtmlEl = {
-    tag?: string;
+    tag: string;
     cls?: string[];
     attrs?: Attribute;
-    content?: HtmlEl | HtmlEl[] | string;
+    content?: string | HtmlEl | (HtmlEl | string)[];
 };
 
 export type Nullable<T> = T | null;

@@ -1,6 +1,6 @@
 import { HtmlEl } from '../types';
 
-function blockForm(): HtmlEl {
+export function blockForm(): HtmlEl {
     return {
         tag: 'form',
         cls: ['reg-block__form', 'form'],
@@ -83,5 +83,3 @@ function blockForm(): HtmlEl {
         ],
     };
 }
-
-export { blockForm };

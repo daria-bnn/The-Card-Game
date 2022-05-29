@@ -5,9 +5,9 @@ import clubsImg from '../img/clubs.png';
 
 import { CardSuit, Card } from './types';
 
-const cardValue = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6'];
+export const cardValue = ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6'];
 
-const cardSuit = [
+export const cardSuit = [
     {
         image: spadesImg,
         color: 'spades',
@@ -26,7 +26,10 @@ const cardSuit = [
     },
 ];
 
-function createCardValues(cardSuits: CardSuit[], cardValues: string[]): Card[] {
+export function createCardValues(
+    cardSuits: CardSuit[],
+    cardValues: string[]
+): Card[] {
     const arrayCard: Card[] = [];
 
     cardValues.forEach((value) => {
@@ -57,5 +60,3 @@ function createCardValues(cardSuits: CardSuit[], cardValues: string[]): Card[] {
 
     return arrayCard;
 }
-
-export { createCardValues, cardSuit, cardValue };

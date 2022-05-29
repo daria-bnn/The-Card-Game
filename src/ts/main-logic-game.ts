@@ -1,14 +1,14 @@
-import { Card } from './types';
+import { Card, Nullable } from './types';
 
 import { createCardValues, cardSuit, cardValue } from './create-cards-value';
 
 import { addAnimation, deleteAnimationClass } from './utils/utils';
 
 export function counterTimes(container: HTMLDivElement) {
-    const valueMinute: HTMLSpanElement | null = container.querySelector(
+    const valueMinute: Nullable<HTMLSpanElement> = container.querySelector(
         '.block-timer__value-minute'
     );
-    const valueSecond: HTMLSpanElement | null = container.querySelector(
+    const valueSecond: Nullable<HTMLSpanElement> = container.querySelector(
         '.block-timer__value-sec'
     );
 
@@ -79,8 +79,8 @@ export function getRandomArrayCards(): Card[] {
 }
 
 export function checkCards() {
-    let firstCard: HTMLDivElement | null,
-        secondCard: HTMLDivElement | null,
+    let firstCard: Nullable<HTMLDivElement>,
+        secondCard: Nullable<HTMLDivElement>,
         numberOfWin: number = 0,
         numberOfattempt: number = window.attempt;
 
@@ -88,22 +88,30 @@ export function checkCards() {
         const target = event.target;
 
         if (
-            !target.closest('.block-cards__card-wrapper_background') &&
-            !target.closest('.flip')
-        )
+            !target.closest('[data-show-card]') ||
+            target.closest("[data-show-card='true']")
+        ) {
+            console.log('куда-то не туда');
             return;
+        }
+
+        console.log('tuk');
 
         if (firstCard && secondCard) return;
 
         if (!firstCard) {
-            firstCard = target.closest('.block-cards__card-wrapper');
+            firstCard = target.closest("[data-show-card='false']");
+            if (!firstCard) return;
+
+            firstCard.dataset.showCard = 'true';
             firstCard?.classList.remove('flip');
 
             return;
         }
 
-        secondCard = target.closest('.block-cards__card-wrapper');
+        secondCard = target.closest("[data-show-card='false']");
         secondCard?.classList.remove('flip');
+        if (secondCard) secondCard.dataset.showCard = 'true';
 
         if (firstCard?.dataset.valueCard === secondCard?.dataset.valueCard) {
             firstCard = null;
@@ -124,6 +132,11 @@ export function checkCards() {
             firstCard?.classList.add('flip');
             secondCard?.classList.add('flip');
 
+            if (!firstCard || !secondCard) return;
+
+            firstCard.dataset.showCard = 'false';
+            secondCard.dataset.showCard = 'false';
+
             firstCard = null;
             secondCard = null;
 
@@ -143,7 +156,7 @@ export function checkCards() {
 }
 
 export function changeAttemptValue() {
-    const attempt: HTMLParagraphElement | null =
+    const attempt: Nullable<HTMLParagraphElement> =
         document.querySelector('.attempt__value');
 
     if (!attempt) return;
@@ -152,11 +165,11 @@ export function changeAttemptValue() {
 }
 
 export function getTime() {
-    const blockTimeMinute: HTMLDivElement | null = document.querySelector(
+    const blockTimeMinute: Nullable<HTMLDivElement> = document.querySelector(
         '.block-timer__value-minute'
     );
 
-    const blockTimeSec: HTMLDivElement | null = document.querySelector(
+    const blockTimeSec: Nullable<HTMLDivElement> = document.querySelector(
         '.block-timer__value-sec'
     );
 

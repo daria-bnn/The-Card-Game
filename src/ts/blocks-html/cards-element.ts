@@ -8,6 +8,7 @@ export function cardsElement(card: Card): HtmlEl {
         cls: ['block-cards__card-wrapper'],
         attrs: {
             ['data-value-card']: card.cardName,
+            ['data-show-card']: true,
         },
         content: [
             {

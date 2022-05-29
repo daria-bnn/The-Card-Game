@@ -1,5 +1,7 @@
+import { Nullable } from '../types';
+
 export function renderLossPage(): void {
-    const wrapper: HTMLDivElement | null =
+    const wrapper: Nullable<HTMLDivElement> =
         document.querySelector('.block-game');
 
     const fixedBlock: HTMLDivElement = document.createElement('div');

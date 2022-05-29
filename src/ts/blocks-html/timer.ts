@@ -1,4 +1,6 @@
-function timer() {
+import { HtmlEl } from '../types';
+
+export function timer(): HtmlEl {
     return {
         tag: 'div',
         cls: ['block-timer'],
@@ -37,5 +39,3 @@ function timer() {
         ],
     };
 }
-
-export { timer };

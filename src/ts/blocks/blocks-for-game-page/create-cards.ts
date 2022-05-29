@@ -8,13 +8,13 @@ export function createCards(container: HTMLDivElement) {
         container.appendChild(createTempleteCart(cardsElement(card)));
     });
 
-    const cardsBackground = container.querySelectorAll(
-        '.block-cards__card-wrapper'
-    );
+    const cardsBackground: NodeListOf<HTMLElement> =
+        container.querySelectorAll('[data-show-card]');
 
     setTimeout(() => {
         cardsBackground.forEach((card) => {
             card.classList.add('flip');
+            card.dataset.showCard = 'false';
         });
     }, 5000);
 

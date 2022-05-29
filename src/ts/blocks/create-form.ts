@@ -1,12 +1,10 @@
+import { Nullable } from '../types';
+import { Levels } from '../constants-for-game';
+
 import { createTempleteCart } from '../template-engine/create-template-card';
 import { blockForm } from '../blocks-html/form';
 import { makeButtonInactive, makeButtonActive } from '../utils/utils';
 
-enum Levels {
-    Light = 'light',
-    Medium = 'medium',
-    Hard = 'hard',
-}
 export function createForm(container: HTMLDivElement): void {
     container?.appendChild(createTempleteCart(blockForm()));
 
@@ -20,7 +18,7 @@ export function createForm(container: HTMLDivElement): void {
     form?.addEventListener('submit', (event): void => {
         event.preventDefault();
 
-        const button: HTMLButtonElement | null =
+        const button: Nullable<HTMLButtonElement> =
             container.querySelector('.form__button');
 
         let checkValidate: boolean = false;

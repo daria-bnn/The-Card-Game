@@ -14,6 +14,7 @@ import { renderStartPage } from '../screens/start-page';
 import { renderGamePage } from '../screens/game-page';
 import { renderWinPage } from '../screens/win-page';
 import { renderLossPage } from '../screens/loss-page';
+import { HtmlEl } from '../types';
 
 export function initGameState() {
     return (window.application = {
@@ -34,14 +35,17 @@ export function initGameState() {
             ['render-win-page']: renderWinPage,
             ['render-loss-page']: renderLossPage,
         },
-        renderScreen: function (screenName) {
+        renderScreen: function (screenName: string): void {
             window.application.timers.forEach((time) => {
                 clearInterval(time);
             });
 
             this.screens[screenName]();
         },
-        renderBlock: function (blockName, container) {
+        renderBlock: function (
+            blockName: string,
+            container: HTMLElement
+        ): void {
             window.application.blocks[blockName](container);
         },
         timers: [],

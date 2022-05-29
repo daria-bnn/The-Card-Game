@@ -5,9 +5,10 @@ import { counterTimes } from '../../main-logic-game';
 export function createTimerForGame(container: HTMLDivElement) {
     container?.appendChild(createTempleteCart(timer()));
 
-    const startCounterTimer: any = counterTimes(container);
+    const startCounterTimer = counterTimes(container);
 
-    const intervalForTime = setInterval(startCounterTimer, 1000);
-
-    window.application.timers.push(intervalForTime);
+    if (startCounterTimer) {
+        const intervalForTime = window.setInterval(startCounterTimer, 1000);
+        window.application.timers.push(intervalForTime);
+    }
 }
