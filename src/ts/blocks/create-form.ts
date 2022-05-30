@@ -1,5 +1,5 @@
 import { Nullable } from '../types';
-import { Levels } from '../constants-for-game';
+import { Levels } from '../constants';
 
 import { createTempleteCart } from '../template-engine/create-template-card';
 import { blockForm } from '../blocks-html/form';

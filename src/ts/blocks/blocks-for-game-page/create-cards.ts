@@ -1,7 +1,7 @@
 import { createTempleteCart } from '../../template-engine/create-template-card';
 import { cardsElement } from '../../blocks-html/cards-element';
-
-import { getRandomArrayCards, checkCards } from '../../main-logic-game';
+import { getRandomArrayCards } from '../../main-logic/get-random-array-cards';
+import { checkCards } from '../../main-logic/for-check-cards';
 
 export function createCards(container: HTMLDivElement) {
     getRandomArrayCards().forEach((card) => {

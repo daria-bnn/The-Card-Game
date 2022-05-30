@@ -1,6 +1,6 @@
 import { createTempleteCart } from '../../template-engine/create-template-card';
 import { timer } from '../../blocks-html/timer';
-import { counterTimes } from '../../main-logic-game';
+import { counterTimes } from '../../main-logic/counter-times';
 
 export function createTimerForGame(container: HTMLDivElement) {
     container?.appendChild(createTempleteCart(timer()));

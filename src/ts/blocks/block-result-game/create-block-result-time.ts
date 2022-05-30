@@ -1,4 +1,4 @@
-import { getTime } from '../../main-logic-game';
+import { getTime } from '../../main-logic/get-time';
 
 export function createBlockresultTime(container: HTMLDivElement) {
     const blockTimeResult = document.createElement('div');

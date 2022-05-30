@@ -26,12 +26,18 @@ export function timer(): HtmlEl {
                     {
                         tag: 'span',
                         cls: ['block-timer__value-minute'],
+                        attrs: {
+                            id: 'timer-value-min',
+                        },
                         content: '00',
                     },
                     '.',
                     {
                         tag: 'span',
                         cls: ['block-timer__value-sec'],
+                        attrs: {
+                            id: 'timer-value-sec',
+                        },
                         content: '00',
                     },
                 ],
