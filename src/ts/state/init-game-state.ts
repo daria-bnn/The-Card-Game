@@ -14,7 +14,6 @@ import { renderStartPage } from '../screens/start-page';
 import { renderGamePage } from '../screens/game-page';
 import { renderWinPage } from '../screens/win-page';
 import { renderLossPage } from '../screens/loss-page';
-import { HtmlEl } from '../types';
 
 export function initGameState() {
     return (window.application = {

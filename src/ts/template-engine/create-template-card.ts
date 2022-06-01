@@ -1,7 +1,7 @@
 import { HtmlEl } from '../types';
 
 export function createTempleteCart(
-    block?: HtmlEl | HtmlEl[] | string | (HtmlEl | string)[] | undefined
+    block?: HtmlEl | HtmlEl[] | string | (HtmlEl | string)[]
 ): Text | DocumentFragment | HTMLElement {
     if (block === undefined) {
         return document.createTextNode('');

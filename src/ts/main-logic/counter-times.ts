@@ -1,10 +1,10 @@
 import { Nullable } from '../types';
 
-export function counterTimes(container: HTMLDivElement) {
+export function counterTimes() {
     const valueMinute: Nullable<HTMLSpanElement> =
-        container.querySelector('#timer-value-min');
+        document.getElementById('timer-value-min');
     const valueSecond: Nullable<HTMLSpanElement> =
-        container.querySelector('#timer-value-sec');
+        document.getElementById('timer-value-sec');
 
     if (!valueMinute || !valueSecond) return;
 

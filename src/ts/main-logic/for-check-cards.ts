@@ -5,7 +5,7 @@ import { changeAttemptValue } from './change-attempt';
 function hideCard(
     firstCard: Nullable<HTMLDivElement>,
     secondCard: Nullable<HTMLDivElement>,
-    numberOfattempt: number
+    numberOfAttempt: number
 ) {
     firstCard?.classList.add('flip');
     secondCard?.classList.add('flip');
@@ -15,20 +15,20 @@ function hideCard(
     firstCard.dataset.showCard = 'false';
     secondCard.dataset.showCard = 'false';
 
-    numberOfattempt--;
-    window.attempt = numberOfattempt;
+    numberOfAttempt--;
+    window.attempt = numberOfAttempt;
 }
 
 export function checkCards() {
     let firstCard: Nullable<HTMLDivElement>,
         secondCard: Nullable<HTMLDivElement>,
         numberOfWin: number = 0,
-        numberOfattempt: number;
+        numberOfAttempt: number;
 
     const result = (event) => {
         const target = event.target;
 
-        numberOfattempt = window.attempt;
+        numberOfAttempt = window.attempt;
 
         if (
             !target.closest('[data-show-card]') ||
@@ -41,6 +41,7 @@ export function checkCards() {
 
         if (!firstCard) {
             firstCard = target.closest("[data-show-card='false']");
+
             if (!firstCard) return;
 
             firstCard.dataset.showCard = 'true';
@@ -69,7 +70,7 @@ export function checkCards() {
         deleteAnimationClass();
 
         setTimeout(() => {
-            hideCard(firstCard, secondCard, numberOfattempt);
+            hideCard(firstCard, secondCard, numberOfAttempt);
 
             firstCard = null;
             secondCard = null;

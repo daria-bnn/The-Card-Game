@@ -55,7 +55,6 @@ export function createForm(container: HTMLDivElement): void {
 
         if (target.closest('.block-options__name')) {
             error?.classList.add('form__error_hidden');
-            console.log('click');
             return;
         }
     });
