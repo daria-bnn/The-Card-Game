@@ -5,7 +5,7 @@ import { counterTimes } from '../../main-logic/counter-times';
 export function createTimerForGame(container: HTMLDivElement) {
     container?.appendChild(createTempleteCart(timer()));
 
-    const startCounterTimer = counterTimes();
+    const startCounterTimer = counterTimes(container);
 
     if (startCounterTimer) {
         const intervalForTime = window.setInterval(startCounterTimer, 1000);
