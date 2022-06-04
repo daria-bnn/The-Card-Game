@@ -1,4 +1,4 @@
-import { Nullable } from '../types';
+import { HtmlEl, Nullable } from '../types';
 import { addAnimation, deleteAnimationClass } from '../utils/utils';
 import { changeAttemptValue } from './change-attempt';
 
@@ -25,8 +25,10 @@ export function checkCards() {
         numberOfWin: number = 0,
         numberOfAttempt: number;
 
-    const result = (event) => {
-        const target = event.target;
+    const result = (event: KeyboardEvent) => {
+        const target = event.target as HTMLDivElement;
+
+        if (!target) return;
 
         numberOfAttempt = window.attempt;
 

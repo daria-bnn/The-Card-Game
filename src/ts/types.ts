@@ -3,7 +3,7 @@ type CaptionLevel = {
     attempt: number;
 };
 
-type Blocks = {
+export type Blocks = {
     ['create-form']: (container: HTMLDivElement) => void;
     ['create-timer-for-game']: (container: HTMLDivElement) => void;
     ['create-button']: (container: HTMLDivElement) => void;
@@ -22,11 +22,14 @@ type Screens = {
     ['render-loss-page']: () => void;
 };
 
-type App = {
+export type App = {
     blocks: Blocks;
     screens: Screens;
-    renderScreen: (screenName: string) => void;
-    renderBlock: (blockName: string, container: HTMLElement) => void;
+    renderScreen: (screenName: keyof typeof window.application.screens) => void;
+    renderBlock: (
+        blockName: keyof typeof window.application.blocks,
+        container: HTMLDivElement
+    ) => void;
     timers: number[];
 };
 
@@ -54,14 +57,14 @@ export type Card = {
     cardName?: string;
 };
 
-type Attribute = {
+export type Attribute = {
     type?: string;
     id?: string;
     name?: string;
     value?: string;
     for?: string;
     'data-value-card'?: string;
-    'data-show-card'?: boolean;
+    'data-show-card'?: string;
     src?: string;
     alt?: string;
 };

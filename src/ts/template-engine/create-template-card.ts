@@ -1,4 +1,5 @@
-import { HtmlEl } from '../types';
+import { Attribute, HtmlEl } from '../types';
+import { Attributes } from '../constants';
 
 export function createTempleteCart(
     block?: HtmlEl | HtmlEl[] | string | (HtmlEl | string)[]
@@ -32,11 +33,13 @@ export function createTempleteCart(
     }
 
     if (block.attrs) {
-        const keys = Object.keys(block.attrs);
+        const keys = Object.keys(block.attrs) as (keyof typeof Attributes)[];
 
         keys.forEach((key) => {
             if (block.attrs) {
-                result.setAttribute(key, block.attrs[key]);
+                const value: string = block.attrs[key] as string;
+
+                result.setAttribute(key, value);
             }
         });
     }

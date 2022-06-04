@@ -1,4 +1,4 @@
-export function blockResult(image, content: string) {
+export function blockResult(image: string, content: string) {
     return {
         tag: 'div',
         cls: ['result__info', 'info-result'],

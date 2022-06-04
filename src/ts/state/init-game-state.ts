@@ -14,37 +14,35 @@ import { renderStartPage } from '../screens/start-page';
 import { renderGamePage } from '../screens/game-page';
 import { renderWinPage } from '../screens/win-page';
 import { renderLossPage } from '../screens/loss-page';
+import { App } from '../types';
 
-export function initGameState() {
+export function initGameState(): App {
     return (window.application = {
         blocks: {
-            ['create-form']: createForm,
-            ['create-timer-for-game']: createTimerForGame,
-            ['create-button']: createButton,
-            ['create-cards']: createCards,
-            ['create-attemts']: createAttempts,
-            ['create-block-win']: createBlockWin,
-            ['create-block-loss']: createBlockLoss,
-            ['create-block-show-time']: createBlockresultTime,
-            ['create-button-again']: createButtonAgain,
+            'create-form': createForm,
+            'create-timer-for-game': createTimerForGame,
+            'create-button': createButton,
+            'create-cards': createCards,
+            'create-attemts': createAttempts,
+            'create-block-win': createBlockWin,
+            'create-block-loss': createBlockLoss,
+            'create-block-show-time': createBlockresultTime,
+            'create-button-again': createButtonAgain,
         },
         screens: {
-            ['render-start-page']: renderStartPage,
-            ['render-game-page']: renderGamePage,
-            ['render-win-page']: renderWinPage,
-            ['render-loss-page']: renderLossPage,
+            'render-start-page': renderStartPage,
+            'render-game-page': renderGamePage,
+            'render-win-page': renderWinPage,
+            'render-loss-page': renderLossPage,
         },
-        renderScreen: function (screenName: string): void {
+        renderScreen: function (screenName) {
             window.application.timers.forEach((time) => {
                 clearInterval(time);
             });
 
-            this.screens[screenName]();
+            window.application.screens[screenName]();
         },
-        renderBlock: function (
-            blockName: string,
-            container: HTMLElement
-        ): void {
+        renderBlock: function (blockName, container): void {
             window.application.blocks[blockName](container);
         },
         timers: [],
