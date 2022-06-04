@@ -1,8 +1,8 @@
-import { Attribute, HtmlEl } from '../types';
+import { HtmlEl } from '../types';
 import { Attributes } from '../constants';
 
 export function createTempleteCart(
-    block?: HtmlEl | HtmlEl[] | string | (HtmlEl | string)[]
+    block?: HtmlEl | string | (HtmlEl | string)[]
 ): Text | DocumentFragment | HTMLElement {
     if (block === undefined) {
         return document.createTextNode('');
