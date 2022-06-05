@@ -25,7 +25,7 @@ export function checkCards() {
         numberOfWin: number = 0,
         numberOfAttempt: number;
 
-    const result = (event: KeyboardEvent) => {
+    const result = (event: MouseEvent) => {
         const target = event.target as HTMLDivElement;
 
         if (!target) return;

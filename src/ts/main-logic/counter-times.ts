@@ -1,10 +1,12 @@
 import { Nullable } from '../types';
 
 export function counterTimes(container: HTMLDivElement) {
-    const valueMinute: Nullable<HTMLSpanElement> =
-        container.querySelector('[timer-value-min]');
-    const valueSecond: Nullable<HTMLSpanElement> =
-        container.querySelector('[timer-value-sec]');
+    const valueMinute: Nullable<HTMLSpanElement> = container.querySelector(
+        '[data-timer-value-min]'
+    );
+    const valueSecond: Nullable<HTMLSpanElement> = container.querySelector(
+        '[data-timer-value-sec]'
+    );
 
     if (!valueMinute || !valueSecond) return;
 

@@ -8,10 +8,9 @@ import { makeButtonInactive, makeButtonActive } from '../utils/utils';
 export function createForm(container: HTMLDivElement): void {
     container?.appendChild(createTempleteCart(blockForm()));
 
-    const form = container.querySelector('.form');
-    const inputs: NodeListOf<HTMLInputElement> = container.querySelectorAll(
-        '.block-options__input'
-    );
+    const form = container.querySelector('[data-form]');
+    const inputs: NodeListOf<HTMLInputElement> =
+        container.querySelectorAll('[data-input]');
 
     const error = container.querySelector('.form__error');
 
@@ -51,7 +50,9 @@ export function createForm(container: HTMLDivElement): void {
     });
 
     form?.addEventListener('click', (event) => {
-        const target = <HTMLElement>event.target;
+        const target = event.target as HTMLElement;
+
+        if (!target) return;
 
         if (target.closest('.block-options__name')) {
             error?.classList.add('form__error_hidden');

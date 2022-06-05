@@ -5,13 +5,13 @@ export enum Levels {
 }
 
 export enum Attributes {
-    type = 'type',
-    id = 'id',
-    name = 'name',
-    value = 'value',
-    for = 'for',
-    'data-value-card' = 'data-value-card',
-    'data-show-card' = 'data-show-card',
-    src = 'src',
-    alt = 'alt',
+    Type = 'type',
+    Id = 'id',
+    Name = 'name',
+    Value = 'value',
+    For = 'for',
+    'Data-value-card' = 'data-value-card',
+    'Data-show-card' = 'data-show-card',
+    Src = 'src',
+    Alt = 'alt',
 }

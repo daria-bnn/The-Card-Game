@@ -4,6 +4,9 @@ export function blockForm(): HtmlEl {
     return {
         tag: 'form',
         cls: ['reg-block__form', 'form'],
+        attrs: {
+            'data-form': '',
+        },
         content: [
             {
                 tag: 'label',
@@ -22,6 +25,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-light',
                             name: 'difficulty',
                             value: 'light',
+                            'data-input': '',
                         },
                     },
                     {
@@ -40,6 +44,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-medium',
                             name: 'difficulty',
                             value: 'medium',
+                            'data-input': '',
                         },
                     },
                     {
@@ -58,6 +63,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-hard',
                             name: 'difficulty',
                             value: 'hard',
+                            'data-input': '',
                         },
                     },
                     {

@@ -67,8 +67,10 @@ export type Attribute = {
     'data-show-card'?: string;
     src?: string;
     alt?: string;
-    'timer-value-sec'?: any;
-    'timer-value-min'?: any;
+    'data-timer-value-sec'?: any;
+    'data-timer-value-min'?: any;
+    'data-form'?: any;
+    'data-input'?: any;
 };
 
 export type HtmlEl = {

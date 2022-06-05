@@ -18,7 +18,7 @@ export function createCards(container: HTMLDivElement) {
         });
     }, 5000);
 
-    const startCheckCards = checkCards() as EventListener;
+    const startCheckCards = checkCards();
 
     container.addEventListener('click', startCheckCards);
 }

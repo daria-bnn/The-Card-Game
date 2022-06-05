@@ -4,7 +4,7 @@ import ImgLoss from '/src/img/loss.png';
 import { createTempleteCart } from '../../template-engine/create-template-card';
 import { blockResult } from '../../blocks-html/result-block-element';
 
-export function createBlockLoss(container: HTMLDivElement) {
+export function createLossBlock(container: HTMLDivElement) {
     container.appendChild(
         createTempleteCart(blockResult(ImgLoss, 'проиграли'))
     );

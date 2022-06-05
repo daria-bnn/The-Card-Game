@@ -5,7 +5,7 @@ import { createButton } from '../blocks/blocks-for-game-page/create-button';
 import { createCards } from '../blocks/blocks-for-game-page/create-cards';
 import {
     createBlockWin,
-    createBlockLoss,
+    createLossBlock,
 } from '../blocks/block-result-game/create-block-result';
 import { createBlockresultTime } from '../blocks/block-result-game/create-block-result-time';
 import { createButtonAgain } from '../blocks/block-result-game/create-button-again';
@@ -25,7 +25,7 @@ export function initGameState(): App {
             'create-cards': createCards,
             'create-attemts': createAttempts,
             'create-block-win': createBlockWin,
-            'create-block-loss': createBlockLoss,
+            'create-block-loss': createLossBlock,
             'create-block-show-time': createBlockresultTime,
             'create-button-again': createButtonAgain,
         },
