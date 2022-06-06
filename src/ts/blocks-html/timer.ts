@@ -27,7 +27,7 @@ export function timer(): HtmlEl {
                         tag: 'span',
                         cls: ['block-timer__value-minute'],
                         attrs: {
-                            'data-timer-value-min': '',
+                            'data-timer-value-min': true,
                         },
                         content: '00',
                     },
@@ -36,7 +36,7 @@ export function timer(): HtmlEl {
                         tag: 'span',
                         cls: ['block-timer__value-sec'],
                         attrs: {
-                            'data-timer-value-sec': '',
+                            'data-timer-value-sec': true,
                         },
                         content: '00',
                     },

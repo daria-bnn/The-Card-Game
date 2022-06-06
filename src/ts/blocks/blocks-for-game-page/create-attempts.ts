@@ -8,6 +8,7 @@ export function createAttempts(container: HTMLDivElement) {
 
     const attemptValue = document.createElement('p');
     attemptValue.classList.add('attempt__value');
+    attemptValue.dataset.attempt = 'true';
     attemptValue.textContent = String(window.attempt);
 
     blockAttempt.appendChild(attemptTitle);

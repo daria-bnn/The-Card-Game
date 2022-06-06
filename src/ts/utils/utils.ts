@@ -16,14 +16,14 @@ export function makeButtonActive(button: Nullable<HTMLButtonElement>): void {
 
 export function addAnimation() {
     const attempt: Nullable<HTMLParagraphElement> =
-        document.querySelector('.attempt__value');
+        document.querySelector('[data-attempt]');
 
     attempt?.classList.add('attempt__value_animation');
 }
 
 export function deleteAnimationClass() {
     const attempt: Nullable<HTMLParagraphElement> =
-        document.querySelector('.attempt__value');
+        document.querySelector('[data-attempt]');
 
     attempt?.classList.remove('attempt__value_animation');
 }

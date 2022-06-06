@@ -1,8 +1,8 @@
 import { Nullable } from '../types';
 
 export function renderGamePage(): void {
-    const wrapper: Nullable<HTMLDivElement> =
-        document.querySelector('.block-game');
+    const wrapper: Nullable<HTMLElement> =
+        document.getElementById('block-game');
 
     if (wrapper) {
         wrapper.innerHTML = '';

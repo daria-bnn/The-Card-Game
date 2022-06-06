@@ -12,13 +12,13 @@ export function createForm(container: HTMLDivElement): void {
     const inputs: NodeListOf<HTMLInputElement> =
         container.querySelectorAll('[data-input]');
 
-    const error = container.querySelector('.form__error');
+    const error = container.querySelector('[data-form-error]');
 
     form?.addEventListener('submit', (event): void => {
         event.preventDefault();
 
         const button: Nullable<HTMLButtonElement> =
-            container.querySelector('.form__button');
+            container.querySelector('[data-button]');
 
         let checkValidate: boolean = false;
 

@@ -37,7 +37,7 @@ export function createTempleteCart(
         keys.forEach((key) => {
             const keyOne = key as keyof typeof block.attrs;
             if (block.attrs) {
-                const value = block.attrs[keyOne];
+                const value = block.attrs[keyOne] as string;
 
                 result.setAttribute(key, value);
             }

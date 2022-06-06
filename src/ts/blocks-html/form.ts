@@ -5,7 +5,7 @@ export function blockForm(): HtmlEl {
         tag: 'form',
         cls: ['reg-block__form', 'form'],
         attrs: {
-            'data-form': '',
+            'data-form': true,
         },
         content: [
             {
@@ -25,7 +25,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-light',
                             name: 'difficulty',
                             value: 'light',
-                            'data-input': '',
+                            'data-input': true,
                         },
                     },
                     {
@@ -44,7 +44,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-medium',
                             name: 'difficulty',
                             value: 'medium',
-                            'data-input': '',
+                            'data-input': true,
                         },
                     },
                     {
@@ -63,7 +63,7 @@ export function blockForm(): HtmlEl {
                             id: 'difficulty-hard',
                             name: 'difficulty',
                             value: 'hard',
-                            'data-input': '',
+                            'data-input': true,
                         },
                     },
                     {
@@ -80,11 +80,17 @@ export function blockForm(): HtmlEl {
                 tag: 'button',
                 cls: ['form__button', 'button'],
                 content: 'Старт',
+                attrs: {
+                    'data-button': true,
+                },
             },
             {
                 tag: 'div',
                 cls: ['form__error', 'form__error_hidden'],
                 content: 'Нужно выбрать уровень сложности',
+                attrs: {
+                    'data-form-error': true,
+                },
             },
         ],
     };
