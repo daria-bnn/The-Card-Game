@@ -1,0 +1,69 @@
+@font-face {
+    font-family: generalFont;
+    src: url('../fonts/Rubik-Regular.woff');
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: generalFont, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    background-color: #004980;
+    overflow: hidden;
+}
+
+.center {
+    padding-right: calc(50% - 326px);
+    padding-left: calc(50% - 326px);
+}
+
+.block-game {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

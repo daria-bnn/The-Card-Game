@@ -1,0 +1,61 @@
+{
+    "name": "card-game",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write .",
+        "lint:js": "eslint './src/**/*.js'",
+        "lint:ts": "tsc --noEmit",
+        "lint:scss": "stylelint '**/*.scss'",
+        "lint": "npm run lint:ts && npm run lint:scss",
+        "prepare": "husky install",
+        "build": "NODE_ENV=production webpack",
+        "start": "NODE_ENV=development webpack-dev-server --open"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/daria-bnn/the-card-game.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/daria-bnn/the-card-game/issues"
+    },
+    "homepage": "https://github.com/daria-bnn/the-card-game#readme",
+    "devDependencies": {
+        "@types/lodash": "^4.14.182",
+        "copy-webpack-plugin": "^10.2.4",
+        "css-loader": "^6.7.1",
+        "css-minimizer-webpack-plugin": "^3.4.1",
+        "eslint": "^8.14.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "html-webpack-plugin": "^5.5.0",
+        "husky": "^8.0.1",
+        "mini-css-extract-plugin": "^2.6.0",
+        "postcss": "^8.4.13",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.5.0",
+        "prettier": "^2.6.2",
+        "sass": "^1.51.0",
+        "sass-loader": "^12.6.0",
+        "style-loader": "^3.3.1",
+        "stylelint": "^14.7.1",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-config-standard-scss": "^3.0.0",
+        "stylelint-prettier": "^2.0.0",
+        "stylelint-scss": "^4.2.0",
+        "ts-loader": "^9.3.0",
+        "typecript": "0.0.1-security",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.9.0"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "typescript": "^4.6.4"
+    }
+}
