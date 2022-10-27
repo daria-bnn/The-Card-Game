@@ -1,4 +1,5 @@
-# Проект The card game
+# Проект The Сard game
+Игра доступна по [ссылке](https://daria-bnn.github.io/the-card-game/)
 
 ### Описание
 
