@@ -19,18 +19,10 @@ _JavaScript, TypeScript, SCSS, Webpack_
 ### Игра реализована как SPA (Single page application).
 
 ### В проекте настроено рабочее окружение и настроен единый стиль кодирования:
-#### использованы следующие линтеры: 
-- 
-- 
-- 
-настроен линтер для TS кода
-npm run lint:ts
-настроен линтер для SCSS кода
-npm run lint:scss
-настроен prettier для форматирования кода
-npm run format
-единая команда для форматирования TS и SCSS кода:
-npm run lint
+#### Использованы следующие линтеры (для TS и Css кода): 
+- Prettier
+- Stylint
+- Eslint
 
 ### Особенности
 
